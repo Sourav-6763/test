@@ -21,14 +21,14 @@ main()
   .catch((err) => console.log(err));
 
 // Serve static files
-app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
+app.use(express.static(path.resolve(__dirname, "frontend", "build")));
 
 // Routes
 app.use("/auth", auth);
 app.use("/list", list);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 
 // Error handling middleware
