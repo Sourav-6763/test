@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(cors());
 require('dotenv').config()
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
+// const port = 1000;
 
 async function main() {
   await mongoose.connect(process.env.MONGO_URL);
