@@ -12,8 +12,8 @@ require('dotenv').config()
 
 
 
-// const port = process.env.PORT || 8080;
-const port = 1000;
+const port = process.env.PORT || 8080;
+// const port = 1000;
 
 app.get("/", async (req, res) => {
   res.send("working good")
