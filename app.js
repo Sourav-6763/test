@@ -3,15 +3,22 @@ const mongoose = require("mongoose");
 const auth = require("./router/auth");
 const list = require("./router/list");
 const cors = require("cors");
-require("dotenv").config
+require("dotenv").config(); 
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 require('dotenv').config()
 
-const port = process.env.PORT || 8080;
-// const port = 1000;
+
+
+// const port = process.env.PORT || 8080;
+const port = 1000;
+
+app.get("/", async (req, res) => {
+  res.send("working good")
+});
+
 
 async function main() {
   await mongoose.connect(process.env.MONGO_URL);
